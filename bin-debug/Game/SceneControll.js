@@ -27,3 +27,4 @@ var SceneController = (function () {
     return SceneController;
 }());
 __reflect(SceneController.prototype, "SceneController");
+//# sourceMappingURL=SceneControll.js.map

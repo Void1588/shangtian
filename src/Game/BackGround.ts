@@ -1,8 +1,8 @@
 class backgroundimg extends egret.DisplayObjectContainer{
     private timeOnEnterFrame:number;
     private bg:Array<egret.Bitmap>=[
-        GameUtil.creatBitmapByName("white"),
-        GameUtil.creatBitmapByName("white")
+        GameUtil.creatBitmapByName("whitepng"),
+        GameUtil.creatBitmapByName("whitepng")
     ]
     private bgheight:number;
 

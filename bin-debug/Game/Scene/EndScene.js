@@ -16,3 +16,4 @@ var EndScene = (function (_super) {
     return EndScene;
 }(BaseScene));
 __reflect(EndScene.prototype, "EndScene");
+//# sourceMappingURL=EndScene.js.map

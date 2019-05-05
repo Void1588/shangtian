@@ -13,8 +13,8 @@ var backgroundimg = (function (_super) {
     function backgroundimg() {
         var _this = _super.call(this) || this;
         _this.bg = [
-            GameUtil.creatBitmapByName("white"),
-            GameUtil.creatBitmapByName("white")
+            GameUtil.creatBitmapByName("whitepng"),
+            GameUtil.creatBitmapByName("whitepng")
         ];
         _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.initView, _this);
         return _this;
@@ -50,3 +50,4 @@ var backgroundimg = (function (_super) {
     return backgroundimg;
 }(egret.DisplayObjectContainer));
 __reflect(backgroundimg.prototype, "backgroundimg");
+//# sourceMappingURL=BackGround.js.map

@@ -85,22 +85,6 @@ class Main extends eui.UILayer {
         let bg1:backgroundimg = new backgroundimg
         container.addChild(bg1)
 
-        let bg:egret.Bitmap = GameUtil.creatBitmapByName('white')
-        container.addChild(bg)
-        //因为使用了fixedWide模式，自己根据舞台宽高，重新设置背景图片大小（会被裁剪）
-        let ratioW=GameUtil.getStageWidth()/bg.width
-        let ratioH=GameUtil.getStageHeight()/bg.height
-        let ratio=bg.width/bg.height
-        if(ratioW>ratioH){
-            bg.width=GameUtil.getStageWidth()
-            bg.height=bg.width*ratio
-        }
-        else{
-            bg.height=GameUtil.getStageHeight()
-            bg.width=bg.height*ratio
-        }
-        bg.x = (GameUtil.getStageWidth() - bg.width)/2
-
         SceneController.instance.setStage(container)
         SceneController.initGame()
     }

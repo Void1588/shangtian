@@ -7,13 +7,9 @@ class PlayScene extends BaseScene{
     //砖块
     private brick:Array<BaseBoard>;
 
-    //背景
-    private bg:egret.Bitmap=GameUtil.creatBitmapByName("white");
-
     protected initView(){
          this.addEventListener(egret.Event.ENTER_FRAME,this.onEnterFrame,this);
          this.timeOnEnterFrame=egret.getTimer();
-         this.addChild(this.bg);
     }
 
     private onEnterFrame(e:egret.Event)

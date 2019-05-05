@@ -42,3 +42,4 @@ var BaseBoard = (function (_super) {
     return BaseBoard;
 }(egret.Sprite));
 __reflect(BaseBoard.prototype, "BaseBoard");
+//# sourceMappingURL=BaseBoard.js.map
