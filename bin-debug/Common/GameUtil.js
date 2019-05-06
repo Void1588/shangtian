@@ -44,7 +44,7 @@ var GameUtil = (function () {
         var result = new egret.Bitmap();
         var texture = RES.getRes(name + '_' + type);
         if (!texture) {
-            console.log(1);
+            console.log(name);
         }
         result.texture = texture;
         return result;

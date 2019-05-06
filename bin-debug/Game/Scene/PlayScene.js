@@ -15,18 +15,25 @@ var PlayScene = (function (_super) {
         _this.timeOnEnterFrame = 0;
         //距离上一次制造砖块过去的时间
         _this.fromLastCreate = 0;
-        //背景
-        _this.bg = GameUtil.creatBitmapByName("white");
+        //砖块
+        _this.brick = [new BaseBoard(50, GameUtil.getStageHeight() / 2)];
         return _this;
     }
     PlayScene.prototype.initView = function () {
-        this.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
         this.timeOnEnterFrame = egret.getTimer();
-        this.addChild(this.bg);
+        this.addChild(this.brick[0]);
+        this.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
     };
     PlayScene.prototype.onEnterFrame = function (e) {
+        console.log(this.brick[0].x);
         var nowTime = egret.getTimer();
         var deltaTime = nowTime - this.timeOnEnterFrame;
+        this.fromLastCreate += deltaTime;
+        if (this.fromLastCreate >= 1) {
+            this.fromLastCreate = 0;
+            this.brick.push(new BaseBoard(50, 20));
+            this.addChild(this.brick[0]);
+        }
         this.timeOnEnterFrame = nowTime;
     };
     return PlayScene;

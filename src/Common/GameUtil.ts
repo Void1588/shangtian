@@ -41,7 +41,7 @@ class GameUtil{
         let result=new egret.Bitmap()
         let texture:egret.Texture=RES.getRes(name+'_'+type)
         if(!texture){
-            console.log(1)
+            console.log(name)
         }
         result.texture=texture
         return result

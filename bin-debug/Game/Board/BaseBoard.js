@@ -16,18 +16,18 @@ var BaseBoard = (function (_super) {
         _this.bg = GameUtil.creatBitmapByName("black");
         _this.bgwidth = width;
         _this.bg.width = width;
-        _this.bg.height = 5;
+        _this.bg.height = 200;
         _this.pos = pos;
+        _this.addChild(_this.bg);
         _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.onAddToStage, _this);
         return _this;
     }
-    BaseBoard.prototype.onAddToStage = function (evennt) {
+    BaseBoard.prototype.onAddToStage = function () {
         this.init();
     };
     BaseBoard.prototype.init = function () {
         this.x = this.pos;
-        this.y = -5;
-        this.addChild(this.bg);
+        this.y = GameUtil.getStageHeight() / 2;
     };
     BaseBoard.prototype.IsOnBoard = function (playerpos, playerwidth) {
         var gra = playerpos.x + playerwidth / 2;
@@ -40,6 +40,6 @@ var BaseBoard = (function (_super) {
         this.y += dis;
     };
     return BaseBoard;
-}(egret.Sprite));
+}(egret.DisplayObjectContainer));
 __reflect(BaseBoard.prototype, "BaseBoard");
 //# sourceMappingURL=BaseBoard.js.map

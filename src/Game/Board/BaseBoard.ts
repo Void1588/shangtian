@@ -1,4 +1,4 @@
-class BaseBoard extends egret.Sprite{
+class BaseBoard extends egret.DisplayObjectContainer{
     //背景图片
     protected bg:egret.Bitmap=GameUtil.creatBitmapByName("black");
     //砖块位置
@@ -10,12 +10,13 @@ class BaseBoard extends egret.Sprite{
         super();
         this.bgwidth=width;
         this.bg.width=width;
-        this.bg.height=5;
+        this.bg.height=10;
         this.pos=pos;
+        this.addChild(this.bg); //addChild不要写到添加到舞台的函数里
         this.addEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this)
     }
 
-    public onAddToStage(evennt: egret.Event)
+    public onAddToStage()
     {
         this.init();
     }
@@ -23,8 +24,7 @@ class BaseBoard extends egret.Sprite{
     private init()
     {
         this.x=this.pos;
-        this.y=-5;
-        this.addChild(this.bg);
+        this.y=GameUtil.getStageHeight()/2;
     }
 
     public IsOnBoard(playerpos:Point,playerwidth:number):boolean{

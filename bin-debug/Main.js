@@ -144,21 +144,6 @@ var Main = (function (_super) {
         this.addChild(container);
         var bg1 = new backgroundimg;
         container.addChild(bg1);
-        var bg = GameUtil.creatBitmapByName('whitepng');
-        container.addChild(bg);
-        //因为使用了fixedWide模式，自己根据舞台宽高，重新设置背景图片大小（会被裁剪）
-        var ratioW = GameUtil.getStageWidth() / bg.width;
-        var ratioH = GameUtil.getStageHeight() / bg.height;
-        var ratio = bg.width / bg.height;
-        if (ratioW > ratioH) {
-            bg.width = GameUtil.getStageWidth();
-            bg.height = bg.width * ratio;
-        }
-        else {
-            bg.height = GameUtil.getStageHeight();
-            bg.width = bg.height * ratio;
-        }
-        bg.x = (GameUtil.getStageWidth() - bg.width) / 2;
         SceneController.instance.setStage(container);
         SceneController.initGame();
     };
