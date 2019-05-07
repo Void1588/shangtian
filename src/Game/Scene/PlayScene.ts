@@ -22,6 +22,7 @@ class PlayScene extends BaseScene{
         {
             this.fromLastCreate=0;
             this.brick.push(new BaseBoard(50,20))
+            this.addChild(this.brick[this.brick.length-1])
         }
         let dis=deltaTime*ValueData.ScrollingSpeed;
         for(let i=0;i<this.brick.length;i++)
