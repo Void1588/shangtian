@@ -7,9 +7,14 @@ class PlayScene extends BaseScene{
     //砖块
     private brick:Array<BaseBoard>=[new BaseBoard(100,20)];
 
+    //主角
+    private player:Player=new Player();
+
     protected initView(){
          this.timeOnEnterFrame=egret.getTimer();
          this.addChild(this.brick[0])
+         this.player=new Player();
+         this.addChild(this.player)
          this.addEventListener(egret.Event.ENTER_FRAME,this.onEnterFrame,this);
     }
 
