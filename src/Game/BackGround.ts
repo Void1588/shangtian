@@ -34,13 +34,18 @@ class backgroundimg extends egret.DisplayObjectContainer{
         let nowTime=egret.getTimer();
         let deltaTime=nowTime-this.timeOnEnterFrame;
         let dis=ValueData.ScrollingSpeed*deltaTime;
+        let rollbackIndex=-1;
         for(let i=0;i<2;i++)
         {
             this.bg[i].y+=dis;
             if(this.bg[i].y>=this.bgheight)
             {
-                this.bg[i].y=this.bg[1-i].y-this.bgheight
+                rollbackIndex=i;
             }
+        }
+        if(rollbackIndex!=-1)
+        {
+            this.bg[rollbackIndex].y=this.bg[1-rollbackIndex].y-this.bgheight
         }
         this.timeOnEnterFrame=nowTime;
     }
