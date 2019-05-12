@@ -1,11 +1,7 @@
 {
 	"groups": [
 		{
-<<<<<<< HEAD
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,black_png,whitepng_png,cat_loser_png,cat_normal_png,cat_normal_json,cat_loser_json,toucharea_png",
-=======
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,off_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,black_png,whitepng_png,cat_loser_png,cat_normal_png,cat_normal_json,cat_loser_json,on_png,handle_png",
->>>>>>> acc7fd56c03662c7ecf28483708cff0ada031ae1
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,off_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,black_png,whitepng_png,cat_loser_png,cat_normal_png,cat_normal_json,cat_loser_json,on_png,toucharea_png,on2_png",
 			"name": "preload"
 		}
 	],
@@ -116,55 +112,54 @@
 			"name": "track_sb_png"
 		},
 		{
-			"name": "description_json",
+			"url": "config/description.json",
 			"type": "json",
-			"url": "config/description.json"
+			"name": "description_json"
 		},
 		{
-			"name": "black_png",
+			"url": "source/black.png",
 			"type": "image",
-			"url": "source/black.png"
+			"name": "black_png"
 		},
 		{
-			"name": "whitepng_png",
+			"url": "source/whitepng.png",
 			"type": "image",
-			"url": "source/whitepng.png"
+			"name": "whitepng_png"
 		},
 		{
-			"name": "cat_loser_png",
+			"url": "source/cat_loser.png",
 			"type": "image",
-			"url": "source/cat_loser.png"
+			"name": "cat_loser_png"
 		},
 		{
-			"name": "cat_normal_png",
+			"url": "source/cat_normal.png",
 			"type": "image",
-			"url": "source/cat_normal.png"
+			"name": "cat_normal_png"
 		},
 		{
-			"name": "cat_normal_json",
+			"url": "source/cat_normal.json",
 			"type": "json",
-			"url": "source/cat_normal.json"
+			"name": "cat_normal_json"
 		},
 		{
-			"name": "cat_loser_json",
+			"url": "source/cat_loser.json",
 			"type": "json",
-			"url": "source/cat_loser.json"
+			"name": "cat_loser_json"
 		},
 		{
-<<<<<<< HEAD
-			"name": "toucharea_png",
+			"url": "source/toucharea.png",
 			"type": "image",
-			"url": "source/toucharea.png"
-=======
-			"name": "on_png",
-			"type": "image",
-			"url": "source/on.png"
+			"name": "toucharea_png"
 		},
 		{
-			"name": "handle_png",
+			"url": "source/on.png",
 			"type": "image",
-			"url": "source/handle.png"
->>>>>>> acc7fd56c03662c7ecf28483708cff0ada031ae1
+			"name": "on_png"
+		},
+		{
+			"name": "on2_png",
+			"type": "image",
+			"url": "assets/ToggleSwitch/on.png"
 		}
 	]
 }
