@@ -7,9 +7,9 @@ enum PlayerStatus{
 //主角
 class Player extends egret.DisplayObjectContainer{
     private playerMovieClip = {
-        normal: GameUtil.creatMovieClipByName('cat_normal'),
-        jump: GameUtil.creatMovieClipByName('cat_lose'),
-        die: GameUtil.creatMovieClipByName('cat_lose'),
+        normal: GameUtil.createMovieClipByName('cat_normal'),
+        jump: GameUtil.createMovieClipByName('cat_lose'),
+        die: GameUtil.createMovieClipByName('cat_lose'),
     }
     /**
      * 主角的状态

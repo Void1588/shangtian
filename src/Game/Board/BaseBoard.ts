@@ -1,6 +1,6 @@
 class BaseBoard extends egret.DisplayObjectContainer{
     //背景图片
-    protected bg:egret.Bitmap=GameUtil.creatBitmapByName("black");
+    protected bg:egret.Bitmap=GameUtil.createBitmapByName("black");
     //砖块位置
     protected pos:number;
     //砖块宽度
