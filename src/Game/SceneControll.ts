@@ -5,6 +5,7 @@ class SceneController{
 	private playScene:PlayScene  //游戏场景
 	private endScene:EndScene   //结束场景
 	
+	
 	private static sceneController:SceneController
 
 	public static get instance(){

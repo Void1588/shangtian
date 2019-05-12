@@ -1,7 +1,11 @@
 {
 	"groups": [
 		{
+<<<<<<< HEAD
 			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,black_png,whitepng_png,cat_loser_png,cat_normal_png,cat_normal_json,cat_loser_json,toucharea_png",
+=======
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,off_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,black_png,whitepng_png,cat_loser_png,cat_normal_png,cat_normal_json,cat_loser_json,on_png,handle_png",
+>>>>>>> acc7fd56c03662c7ecf28483708cff0ada031ae1
 			"name": "preload"
 		}
 	],
@@ -82,19 +86,9 @@
 			"name": "tracklight_png"
 		},
 		{
-			"url": "assets/ToggleSwitch/handle.png",
-			"type": "image",
-			"name": "handle_png"
-		},
-		{
 			"url": "assets/ToggleSwitch/off.png",
 			"type": "image",
 			"name": "off_png"
-		},
-		{
-			"url": "assets/ToggleSwitch/on.png",
-			"type": "image",
-			"name": "on_png"
 		},
 		{
 			"url": "assets/Button/button_down.png",
@@ -120,16 +114,6 @@
 			"url": "assets/ScrollBar/track_sb.png",
 			"type": "image",
 			"name": "track_sb_png"
-		},
-		{
-			"url": "assets/bg.jpg",
-			"type": "image",
-			"name": "bg_jpg"
-		},
-		{
-			"url": "assets/egret_icon.png",
-			"type": "image",
-			"name": "egret_icon_png"
 		},
 		{
 			"name": "description_json",
@@ -167,9 +151,20 @@
 			"url": "source/cat_loser.json"
 		},
 		{
+<<<<<<< HEAD
 			"name": "toucharea_png",
 			"type": "image",
 			"url": "source/toucharea.png"
+=======
+			"name": "on_png",
+			"type": "image",
+			"url": "source/on.png"
+		},
+		{
+			"name": "handle_png",
+			"type": "image",
+			"url": "source/handle.png"
+>>>>>>> acc7fd56c03662c7ecf28483708cff0ada031ae1
 		}
 	]
 }

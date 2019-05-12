@@ -27,8 +27,11 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
+
 class Main extends eui.UILayer {
 
+
+    private SCORE:number = 0;//分数
 
     protected createChildren(): void {
         super.createChildren();
@@ -60,6 +63,8 @@ class Main extends eui.UILayer {
     private async runGame() {
         await this.loadResource();
         this.createGameScene();
+
+        
     }
 
     private async loadResource() {
@@ -87,5 +92,45 @@ class Main extends eui.UILayer {
 
         SceneController.instance.setStage(container)
         SceneController.initGame()
+        this.createScore();
     }
+
+    /**
+     * 创建分数栏
+     * create score container
+     */
+    private TF_socre: egret.TextField;
+    private createScore(): void {
+        //为方便管理与设置，把分数栏独立于一个容器内
+        var cont = new egret.DisplayObjectContainer(),
+        bg = GameUtil.createBitmapByName("on"),//分数的显示框背景图片
+        title = GameUtil.createBitmapByName("handle"),//分数二字
+        txt = new egret.TextField();//分数内容
+        //添加的顺序影响层级
+        cont.addChild(bg);
+        cont.addChild(title);
+        cont.addChild(txt);
+        //整个分数容器在设计图中的位置
+        cont.x = 0;
+        cont.y = 0;
+        //标题和分数在分数栏内部的位置
+        title.x = 0;
+        title.y = 0;
+        txt.x = 0;
+        txt.y = 0;
+        //限制文本的区域
+        // txt.width = 110;
+        // txt.height = 32;
+        //定义颜色、水平与垂直居中、字体大小，初始字符、加粗等
+        txt.textColor = 0xffdb15;
+        txt.textAlign = "center";
+        txt.verticalAlign = "middle";
+        txt.size = 24;
+        txt.text = "0";
+        txt.bold = true;
+        //将分数TextField实例引用到Main类下的内部属性值，方便其他方法调用并修改分数值
+        this.TF_socre = txt;
+        this.stage.addChild(cont);
+    }
+
 }

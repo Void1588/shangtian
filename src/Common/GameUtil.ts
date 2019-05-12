@@ -37,7 +37,7 @@ class GameUtil{
     /*
     根据name创建一个Bitmap对象
     */
-    public static creatBitmapByName(name:string,type:string='png'){
+    public static createBitmapByName(name:string,type:string='png'){
         let result=new egret.Bitmap()
         let texture:egret.Texture=RES.getRes(name+'_'+type)
         if(!texture){
@@ -50,7 +50,7 @@ class GameUtil{
     /*
      根据name关键字创建一个MovieClip对象
     */
-    public static creatMovieClipByName(name:string):egret.MovieClip{
+    public static createMovieClipByName(name:string):egret.MovieClip{
         let data_stay:any=RES.getRes(name+"_json")
         let texture_stay:egret.Texture=RES.getRes(name+"_png")
         let mcFactory_stay:egret.MovieClipDataFactory=new egret.MovieClipDataFactory(data_stay,texture_stay)
