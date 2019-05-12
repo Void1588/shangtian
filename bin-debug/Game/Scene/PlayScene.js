@@ -16,25 +16,38 @@ var PlayScene = (function (_super) {
         //距离上一次制造砖块过去的时间
         _this.fromLastCreate = 0;
         //砖块
-        _this.brick = [new BaseBoard(50, GameUtil.getStageHeight() / 2)];
+        _this.brick = [new BaseBoard(100, 20)];
+        //主角
+        _this.player = new Player();
         return _this;
     }
     PlayScene.prototype.initView = function () {
         this.timeOnEnterFrame = egret.getTimer();
         this.addChild(this.brick[0]);
+        this.player = new Player();
+        this.addChild(this.player);
         this.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
+        this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.playerJump, this);
     };
     PlayScene.prototype.onEnterFrame = function (e) {
-        console.log(this.brick[0].x);
         var nowTime = egret.getTimer();
         var deltaTime = nowTime - this.timeOnEnterFrame;
         this.fromLastCreate += deltaTime;
-        if (this.fromLastCreate >= 1) {
+        if (this.fromLastCreate >= 1000) {
             this.fromLastCreate = 0;
             this.brick.push(new BaseBoard(50, 20));
-            this.addChild(this.brick[0]);
+            this.addChild(this.brick[this.brick.length - 1]);
         }
+        var dis = deltaTime * ValueData.ScrollingSpeed;
+        for (var i = 0; i < this.brick.length; i++) {
+            this.brick[i].movedown(dis);
+        }
+        this.player.MoveDown(dis);
         this.timeOnEnterFrame = nowTime;
+    };
+    PlayScene.prototype.playerJump = function () {
+        console.log(1);
+        this.player.Jump();
     };
     return PlayScene;
 }(BaseScene));

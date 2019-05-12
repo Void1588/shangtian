@@ -21,55 +21,65 @@ var Player = (function (_super) {
     function Player() {
         var _this = _super.call(this) || this;
         _this.playerMovieClip = {
-            normal: GameUtil.creatMovieClipByName(''),
-            jump: GameUtil.creatMovieClipByName(''),
-            die: GameUtil.creatMovieClipByName(''),
+            normal: GameUtil.creatMovieClipByName('cat_normal'),
+            jump: GameUtil.creatMovieClipByName('cat_lose'),
+            die: GameUtil.creatMovieClipByName('cat_lose'),
         };
-        //private bg: egret.MovieClip
-        _this.bg = GameUtil.creatBitmapByName("black");
         _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.onAddToStage, _this);
-        _this.bg.width = 5;
-        _this.bg.height = 5;
+        _this.startPos = new Point(GameUtil.getStageWidth() / 2, GameUtil.getStageHeight() / 2);
         return _this;
+        // this.bg.width=20;
+        // this.bg.height=20;
     }
     Player.prototype.onAddToStage = function (event) {
         this.init();
     };
     Player.prototype.init = function () {
-        //this.bg = new egret.MovieClip()
+        this.bg = new egret.MovieClip();
         this.addChild(this.bg);
         this.setStatus(PlayerStatus.Alive);
+        this.x = this.startPos.x;
+        this.y = this.startPos.y;
+        ;
     };
     Player.prototype.setStatus = function (status) {
         if (this.status === status) {
             return;
         }
         this.status = status;
-        //this.changeBg()
+        this.changeBg();
     };
-    // private changeBg() {
-    //     switch(this.status){
-    //         case PlayerStatus.Alive:
-    //             this.bg.movieClipData = this.playerMovieClip.normal.movieClipData
-    //             this.bg.play(-1)
-    //             break
-    //         case PlayerStatus.Die:
-    //             this.bg.movieClipData = this.playerMovieClip.die.movieClipData
-    //             this.bg.play(-1)
-    //             break
-    //         case PlayerStatus.Jump:
-    //             this.bg.movieClipData = this.playerMovieClip.jump.movieClipData
-    //             this.bg.play(-1)
-    //             break
-    //     }
-    // }
+    Player.prototype.changeBg = function () {
+        switch (this.status) {
+            case PlayerStatus.Alive:
+                this.bg.movieClipData = this.playerMovieClip.normal.movieClipData;
+                this.bg.play(-1);
+                break;
+            case PlayerStatus.Die:
+                this.bg.movieClipData = this.playerMovieClip.die.movieClipData;
+                this.bg.play(-1);
+                break;
+            case PlayerStatus.Jump:
+                this.bg.movieClipData = this.playerMovieClip.jump.movieClipData;
+                this.bg.play(-1);
+                break;
+        }
+    };
     Player.prototype.GetStatus = function () {
         return this.status;
     };
     Player.prototype.SetStatus = function (status) {
         this.status = status;
     };
+    Player.prototype.MoveDown = function (dis) {
+        this.y += dis;
+    };
+    Player.prototype.Jump = function () {
+        console.log("Jump");
+        // this.y-=20;
+        // this.setStatus(PlayerStatus.Jump);
+    };
     return Player;
-}(egret.Sprite));
+}(egret.DisplayObjectContainer));
 __reflect(Player.prototype, "Player");
 //# sourceMappingURL=Player.js.map

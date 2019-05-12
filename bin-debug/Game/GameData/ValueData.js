@@ -4,7 +4,7 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var ValueData = (function () {
     function ValueData() {
     }
-    ValueData.ScrollingSpeed = 5;
+    ValueData.ScrollingSpeed = 0.1;
     ValueData.MinBoardLen = 5;
     ValueData.MaxBoardLen = 10;
     return ValueData;

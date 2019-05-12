@@ -14,8 +14,11 @@ var backgroundimg = (function (_super) {
         var _this = _super.call(this) || this;
         _this.bg = [
             GameUtil.creatBitmapByName("whitepng"),
-            GameUtil.creatBitmapByName("whitepng")
+            GameUtil.creatBitmapByName("header")
         ];
+        _this.addChild(_this.bg[0]);
+        _this.addChild(_this.bg[1]);
+        _this.stageheight = GameUtil.getStageHeight();
         _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.initView, _this);
         return _this;
     }
@@ -23,27 +26,28 @@ var backgroundimg = (function (_super) {
         this.timeOnEnterFrame = egret.getTimer();
         this.bg[0].width = GameUtil.getStageWidth();
         this.bg[1].width = GameUtil.getStageWidth();
-        this.bgheight = GameUtil.getStageHeight() * 2;
+        this.bgheight = GameUtil.getStageHeight() * 1.2;
         this.bg[0].height = this.bgheight;
         this.bg[1].height = this.bgheight;
-        this.addChild(this.bg[0]);
-        this.addChild(this.bg[1]);
         this.bg[0].x = 0;
         this.bg[0].y = 0;
-        this.bg[1].x = 1;
-        this.bg[1].y = this.bgheight;
-        //this.addEventListener(egret.Event.ENTER_FRAME,this.onEnterFrame,this);
+        this.bg[1].x = 0;
+        this.bg[1].y = -this.bgheight;
+        this.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
     };
     backgroundimg.prototype.onEnterFrame = function () {
         var nowTime = egret.getTimer();
         var deltaTime = nowTime - this.timeOnEnterFrame;
         var dis = ValueData.ScrollingSpeed * deltaTime;
+        var rollbackIndex = -1;
         for (var i = 0; i < 2; i++) {
-            this.bg[i].y -= dis;
-            console.log(this.bg[i].y);
-            if (this.bg[i].y <= this.bgheight) {
-                this.bg[i].y = this.bg[1 - i].y + this.bgheight;
+            this.bg[i].y += dis;
+            if (this.bg[i].y >= this.bgheight) {
+                rollbackIndex = i;
             }
+        }
+        if (rollbackIndex != -1) {
+            this.bg[rollbackIndex].y = this.bg[1 - rollbackIndex].y - this.bgheight;
         }
         this.timeOnEnterFrame = nowTime;
     };

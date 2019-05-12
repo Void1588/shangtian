@@ -16,9 +16,9 @@ var BaseBoard = (function (_super) {
         _this.bg = GameUtil.creatBitmapByName("black");
         _this.bgwidth = width;
         _this.bg.width = width;
-        _this.bg.height = 200;
+        _this.bg.height = 10;
         _this.pos = pos;
-        _this.addChild(_this.bg);
+        _this.addChild(_this.bg); //addChild不要写到添加到舞台的函数里
         _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.onAddToStage, _this);
         return _this;
     }
